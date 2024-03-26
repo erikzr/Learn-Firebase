@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Viewer & Uploader</title>
+    <style>
+        #imageList img {
+            max-width: 200px; /* Lebar maksimum gambar */
+            max-height: 200px; /* Tinggi maksimum gambar */
+            width: auto; /* Menjaga rasio aspek gambar */
+            height: auto; /* Menjaga rasio aspek gambar */
+            margin-bottom: 20px; /* Jarak antara gambar */
+        }
+        /* CSS untuk tampilan kotak-kotak */
+        .file-container {
+            display: inline-block;
+            margin: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .file-container img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            width: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Halo, selamat datang di File Viewer & Uploader!</h2>
+
+    <h3>Unggah File</h3>
+    <input type="file" id="fileInput">
+    <button id="uploadButton" onclick="uploadFile()">Unggah File</button> <!-- Tambahkan ID ke tombol -->
+
+    <progress id="progressBar" value="0" max="100"></progress>
+    <p id="progressText">Progress: 0%</p>
+
+    <!-- Tombol Log Out -->
+    <button id="logoutButton">Log Out</button>
+    
+    <h3>Gambar</h3>
+    <div id="imageList"></div>
+
+    <h3>Dokumen</h3>
+    <ul id="documentList"></ul>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>
